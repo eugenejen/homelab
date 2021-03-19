@@ -15,12 +15,16 @@ RUN yum update -y && \
     yum install -y net-tools && \
     yum install -y git && \
     yum install -y which && \
-    yun install -y gdb && \
+    yum install -y gdb && \
+    yum install -y systemtap && \
+    yum install -y valgrind && \
+    yum install yum-utils && \
     yum clean all && \
     rm -rf /var/cache/yum
 
 WORKDIR /opt
 RUN git clone https://github.com/brendangregg/perf-tools.git
+RUN git clone https://github.com/brendangregg/FlameGraph.git
+RUN git clone https://github.com/brendangregg/HeatMap.git
 
-
-
+WORKDIR /
