@@ -15,6 +15,7 @@ RUN yum update -y && \
     yum install -y net-tools && \
     yum install -y git && \
     yum install -y which && \
+    yun install -y gdb \
     yum clean all && \
     rm -rf /var/cache/yum
 
